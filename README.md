@@ -2,8 +2,8 @@
 ![Logo of the project](https://static.wixstatic.com/media/b12e17_d72fa5e2eb3d41438fffecff5443166b~mv2.png/v1/fill/w_440,h_282,al_c,q_85,usm_0.66_1.00_0.01/logo_kevares_vert.webp)
 
 
-## SpotCode
-This application is an app clone of spotify made with Ruby (Back end) and ReactJS (Front end) to play musics, see artist's album, their music and made your day more musicable! Did on weekcode of OneBitCode.
+## Kevares API
+This is the Kevares API application.
 
 
 ## Technology 
