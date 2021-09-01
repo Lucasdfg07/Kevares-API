@@ -5,7 +5,7 @@ default: &default
   postgis_schema: public
   schema_search_path: public,postgis
   pool: 5
-  host: localhost
+  host: db
   username: postgres
   password: ''
 
