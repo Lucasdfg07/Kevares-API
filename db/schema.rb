@@ -22,7 +22,7 @@ ActiveRecord::Schema.define(version: 2021_08_31_203801) do
     t.float "longitude"
     t.string "image"
     t.string "category"
-    t.geometry "lonlat", limit: {:srid=>0, :type=>"st_point"}
+    t.geography "lonlat", limit: {:srid=>4326, :type=>"st_point", :geographic=>true}
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lonlat"], name: "index_issues_on_lonlat", using: :gist

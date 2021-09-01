@@ -2,7 +2,7 @@
   file = File.read("#{Rails.root}/tmp/images/#{i}.json")
   data_hash = JSON.parse(file)
   
-  Issue.create!(
+  Issue.find_or_create_by!(
     image: data_hash['front_image'],
     latitude: data_hash['latitude'],
     longitude: data_hash['longitude'],
