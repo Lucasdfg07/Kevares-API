@@ -8,8 +8,6 @@ RUN apt-get update && apt-get install -qq -y --no-install-recommends \
 nsolid-fermium nsolid-console yarn build-essential libpq-dev imagemagick git-all nano vim \
 libmagickcore-dev libmagickwand-dev
 
-RUN apt-get install -y postgis
-
 # Set our path
 ENV INSTALL_PATH /kevares-api
 

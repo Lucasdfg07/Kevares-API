@@ -25,7 +25,7 @@ RSpec.describe "Issues", type: :request do
       
       it { 
         get "/api/v1/issues?latitude=#{FFaker::Geolocation.lat}&longitude=#{FFaker::Geolocation.lng}"
-        expect(response.body).to eq([].to_json) 
+        expect(JSON.parse(response.body)['issues']).to eq([]) 
       }
 		end
 	end
