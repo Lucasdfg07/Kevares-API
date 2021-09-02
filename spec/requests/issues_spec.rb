@@ -16,7 +16,7 @@ RSpec.describe "Issues", type: :request do
       
       it { 
         get "/api/v1/issues?latitude=#{issue.latitude}&longitude=#{issue.longitude}"
-        expect(response.body).to include(issue.to_json) 
+        expect(JSON.parse(response.body)['issues'].map{|hash| hash['id']}).to include(issue.id) 
       }
     end
     
