@@ -19,8 +19,8 @@ test:
 
 production:
   <<: *default
-  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
   host: postgres
   database: kevares_api_production
   username: kevares_api
   password: <%= ENV['KEVARES_API_DATABASE_PASSWORD'] %>
+  url: <%= ENV.fetch('DATABASE_URL', '').sub(/^postgres/, "postgis") %>
