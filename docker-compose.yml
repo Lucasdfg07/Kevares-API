@@ -1,7 +1,7 @@
 version: "3"
 
 services:
-  postgres:
+  db:
     image: mdillon/postgis:latest
     ports:
       - 5432:5432
@@ -12,7 +12,7 @@ services:
     ports:
       - "3000:3000"
     depends_on:
-      - postgres
+      - db
     volumes:
       - .:/kevares-api
       - gems:/gems
@@ -22,5 +22,5 @@ services:
     stdin_open: true
 
 volumes:
-  postgres:
+  db:
   gems:
