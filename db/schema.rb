@@ -10,11 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_08_31_203801) do
+ActiveRecord::Schema.define(version: 2021_09_15_234023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
   enable_extension "postgis"
+
+  create_table "issue_types", force: :cascade do |t|
+    t.bigint "issue_id"
+    t.bigint "type_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["issue_id"], name: "index_issue_types_on_issue_id"
+    t.index ["type_id"], name: "index_issue_types_on_type_id"
+  end
 
   create_table "issues", force: :cascade do |t|
     t.float "latitude"
@@ -26,6 +35,20 @@ ActiveRecord::Schema.define(version: 2021_08_31_203801) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["lonlat"], name: "index_issues_on_lonlat", using: :gist
+  end
+
+  create_table "statuses", force: :cascade do |t|
+    t.bigint "issue_id"
+    t.integer "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["issue_id"], name: "index_statuses_on_issue_id"
+  end
+
+  create_table "types", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
   end
 
 end

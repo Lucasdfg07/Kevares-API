@@ -5,6 +5,8 @@ json.issues @issues do |issue|
   json.longitude issue.longitude
   json.altitude issue.altitude
   json.category issue.category
+  json.group issue.types.last
+  json.status issue.status.last
 
   geolocation = Geocoder.search([issue.latitude, issue.longitude])
   json.address geolocation.first.data['error'].nil? ? geolocation.first.data['address'] : {'error': geolocation.first.data['error']}
