@@ -4,9 +4,7 @@ FROM ruby:3.0.2
 RUN curl -sL https://nsolid-deb.nodesource.com/nsolid_setup_4.x | bash -
 
 # Install dependencies
-RUN apt-get update && apt-get install -qq -y --no-install-recommends \
-nsolid-fermium nsolid-console yarn build-essential libpq-dev imagemagick git-all nano vim \
-libmagickcore-dev libmagickwand-dev
+RUN apt-get update && apt-get install -y build-essential libpq-dev libmagickcore-dev libmagickwand-dev
 
 # Set our path
 ENV INSTALL_PATH /kevares-api
